@@ -1,25 +1,42 @@
 /* Specificity Exercise */
+/* 
+Formula for specificity: X - Y - Z 
+   X = # of id selectors
+   Y = # of class, pseudoclass, atributes selectors
+   Z = # of element, pseudoelement selectors 
 
+You can hover over these and check the specificity. 
+*/
+
+
+/* 0-1-2  */
 nav .list-item > a {
   color: var(--purple);
 }
 
+/*  1-0-1 */
 #main::first-letter {
   color: var(--purple);
 }
 
+/*  0-1-1 */
 input[type] {
   color: var(--purple);
 }
 
+/* 0-1-2 */
 section .main::first-line {
   color: var(--purple);
 }
 
+/* 1-2-4 
+The :not pseudoclass does not get added to specificity
+*/
 nav ul.menu li#first a:not([class='visited']) {
   color: var(--purple);
 }
 
+/* 0-0-10 */
 div ol li ul li ol li ul li a {
   color: var(--purple);
 }
