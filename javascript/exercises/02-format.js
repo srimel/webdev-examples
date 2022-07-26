@@ -1,8 +1,7 @@
 const formatItems = (input) => {
   // return a string of the concatenated numbers, separated by commas and with three digits after the decimal point
-  const floated = input.map((element) => element.toFixed(3));
-  // console.log(floated);
-  input = floated.toString();
+  let floated = input.map((element) => element.toFixed(3));
+  input = floated.join(', ');
 
   // for reference, see the MDN Number page:
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
