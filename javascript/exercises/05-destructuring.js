@@ -1,7 +1,16 @@
+
+
 const destructureItems = (input) => {
   // destructure the name and parents of the character and format the output as shown
 
-  return input;
+  // we can use destructuring to do this in a better way...
+  // console.log(input.first, input.last, input.allegiance.parents.mother, input.allegiance.parents.father);
+
+  // destructuring first and last names
+  let {first, last} = input;
+  let {mother, father} = input.allegiance.parents;
+  let result = `${mother} and ${father} are the parents of ${first} ${last}!`;
+  return result;
 };
 
 const sansa = {
